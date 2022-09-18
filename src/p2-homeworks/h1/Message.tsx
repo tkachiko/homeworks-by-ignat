@@ -11,15 +11,14 @@ export type MessagePropsType = {
 function Message(props: MessagePropsType) {
   return (
     <div className={styles.message}>
-      <div className={styles.userAvatar}>
-        <img src={props.avatar} alt='User avatar'/>
-      </div>
-      <div className={styles.bubble}>
+      <img src={props.avatar} alt={'avatar'} className={styles.avatar}/>
+
+      <div className={styles.angle}/>
+
+      <div className={styles.content}>
         <div className={styles.name}>{props.name}</div>
-        <div className={styles.userMessage}>
-          <span className={styles.messageText}>{props.message}</span>
-          <span className={styles.time}>{props.time}</span>
-        </div>
+        <div className={styles.text}>{props.message}</div>
+        <div className={styles.time}>{props.time}</div>
       </div>
     </div>
   )
