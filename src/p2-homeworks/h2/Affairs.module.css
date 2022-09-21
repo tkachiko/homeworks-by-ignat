@@ -1,3 +1,50 @@
-.someClass {
+.content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 200px;
+  min-width: 100px;
+  height: 30px;
+  margin: 10px;
+  border: 1px solid;
+  color: #000000;
+  background-color: #ffffff;
+}
 
+.filterButton {
+  margin: 7px;
+  height: 30px;
+}
+
+.button {
+  width: 40px;
+}
+
+.affair {
+  display: flex;
+  width: 75%;
+  justify-content: space-between;
+}
+
+.affairName {
+  font-weight: bold;
+  padding: 5px;
+}
+
+.affairPriority {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.low {
+  color: #0043b9;
+}
+
+.middle {
+  color: #1cad00;
+}
+
+.high {
+  color: #b40101;
 }
