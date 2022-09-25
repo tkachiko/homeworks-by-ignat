@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
-import Greeting from './Greeting'
+import React, {ChangeEvent, useState} from 'react';
+import Greeting from './Greeting';
+import {UserType} from './HW3';
 
 type GreetingContainerPropsType = {
-    users: any // need to fix any
-    addUserCallback: any // need to fix any
+  users: UserType[] // need to fix any
+  addUserCallback: (name: string) => void // need to fix any
 }
 
 // более простой и понятный для новичков
@@ -12,27 +13,37 @@ type GreetingContainerPropsType = {
 // более современный и удобный для про :)
 // уровень локальной логики
 const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
-    const [name, setName] = useState<any>('') // need to fix any
-    const [error, setError] = useState<any>('') // need to fix any
+  const [name, setName] = useState<string>(''); // need to fix any
+  const [error, setError] = useState<string>(''); // need to fix any
 
-    const setNameCallback = (e: any) => { // need to fix any
-        setName('') // need to fix
+  const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
+    if (e.currentTarget.value) { // need to fix
+      setName(e.currentTarget.value);
+      setError('');
     }
-    const addUser = () => {
-        alert(`Hello  !`) // need to fix
+    if (e.currentTarget.value === ' ') {
+      setError('Name is required!');
+      setName('');
     }
 
-    const totalUsers = 0 // need to fix
+  };
+  const addUser = () => {
+    alert(`Hello ${name}!`); // need to fix
+    addUserCallback(name);
+    setName('');
+  };
 
-    return (
-        <Greeting
-            name={name}
-            setNameCallback={setNameCallback}
-            addUser={addUser}
-            error={error}
-            totalUsers={totalUsers}
-        />
-    )
-}
+  const totalUsers = users.length; // need to fix
 
-export default GreetingContainer
+  return (
+    <Greeting
+      name={name}
+      setNameCallback={setNameCallback}
+      addUser={addUser}
+      error={error}
+      totalUsers={totalUsers}
+    />
+  );
+};
+
+export default GreetingContainer;

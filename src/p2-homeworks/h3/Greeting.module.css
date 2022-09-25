@@ -1,7 +1,15 @@
-.someClass {
+.input {
+  border: 1px solid black;
+}
 
+input:focus {
+  outline: none;
 }
 
 .error {
-    border: 1px solid red;
+  border: 1px solid red;
+}
+
+.errorMessage {
+  color: #b40101;
 }
