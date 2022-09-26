@@ -38,13 +38,13 @@
 }
 
 .low {
-  color: #0043b9;
+  color: limegreen;
 }
 
 .middle {
-  color: #1cad00;
+  color: orange;
 }
 
 .high {
-  color: #b40101;
+  color: red;
 }

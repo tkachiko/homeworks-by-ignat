@@ -13,13 +13,15 @@ function Affair(props: AffairPropsType) {
     props.deleteAffairCallback(id);
   };// need to fix
 
+  const priorityClass = `${s.affairPriority} ${s[props.affair.priority]}`;
+
   return (
     <div className={s.content}>
       <div className={s.affair}>
         <div
           className={s.affairName}>{props.affair.name}</div>
         <div
-          className={`${s.affairPriority} ${s[props.affair.priority]}`}>[{props.affair.priority}]
+          className={priorityClass}>[{props.affair.priority}]
         </div>
       </div>
       <button className={s.button} onClick={() => deleteCallback(props.affair._id)}>X</button>

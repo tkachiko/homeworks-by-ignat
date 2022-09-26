@@ -19,16 +19,16 @@ function Affairs(props: AffairsPropsType) {
   ));
 
   const setAll = () => {
-    return props.setFilter('all');
+    props.setFilter('all');
   }; // need to fix
   const setHigh = () => {
-    return props.setFilter('high');
+    props.setFilter('high');
   };
   const setMiddle = () => {
-    return props.setFilter('middle');
+    props.setFilter('middle');
   };
   const setLow = () => {
-    return props.setFilter('low');
+    props.setFilter('low');
   };
 
   return (
